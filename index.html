@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womazing</title>
+    <meta name="description" content="Womazing">
+	<meta name="keywords" content="магазин, одежда, свитеры, купальники, футболки, покупки онлайн, мода">
+	<!-- OG Tags -->
+	<meta property="og:title" content="Womazing / Главная">
+	<meta property="og:description" content="Womazing">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="WebCode">
+	<!-- Styling -->
+	<meta name="theme-color" content="#4985FF">
+	<link rel="icon" type="image/png" href="./img/favicon.png">
+    <!-- Bootstrap -->
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="background__header"></div>
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__menu_wrapper">
+                    <div class="header__menu_logo-wrap">
+                        <a href="index.html" class="header__menu_logo-link">
+                            <img src="./img/logo.svg" alt="logo" class="header__menu_logo-img">
+                        </a>
+                    </div>
+                    <nav class="header__menu_links_wrap">
+                        <ul class="header__menu_list">
+                            <li class="header__menu_item">
+                                <a href="./index.html" title="Главная" class="header__menu_link header__menu_link-w-700">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="header__menu_item">
+                                <a href="./shop.html" title="Магазин" class="header__menu_link">
+                                    Магазин
+                                </a>
+                            </li>
+                            <li class="header__menu_item">
+                                <a href="./about.html" title="О бренде" class="header__menu_link">
+                                    О бренде
+                                </a>
+                            </li>
+                            <li class="header__menu_item">
+                                <a href="./contacts.html" title="Контакты" class="header__menu_link">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__menu_contacts-wrap">
+                        <div class="header__menu_contact_wrapper">
+                            <button type="button" class="header__menu_contact_btn">
+                                <div class="header__menu_contact_icon-tel"></div>
+                            </button>
+                            <a href="tel:+74958235412" class="header__menu_contact_link">
+                                +7 (495) 823-54-12
+                            </a>
+                        </div>
+                        <div class="header__menu_contact_basket_wrap">
+                            <a href="./basket.html" class="header__menu_contact_basket-link">
+                                <img src="./img/basket.svg" alt="" class="header__menu_contact_basket-img">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="header__modal-window_wrapper" id="header__modal-window_wrapper">
+                        <div class="header__overlay-modal" id="header__overlay-modal"></div>
+                        <div class="header__modal-window_form_wrapper">
+                            <button class="header__modal-window_form_btn-close" id="header__modal-window_form_btn-close">
+                                <img src="./img/Close.svg" alt="" class="header__modal-window_form_icon-close">
+                            </button>
+                            <h4 class="header__modal-window_form_title">
+                                Заказать обратный звонок
+                            </h4>
+                            <form action="#" class="header__modal-window_form" id="header__modal-window_form">
+                                <input type="text" class="header__modal-window_form_input" name="name"  placeholder="Имя" required>
+
+                                <input type="email" class="header__modal-window_form_input" name="email"  placeholder="E-mail" required>
+
+                                <input type="tel" class="header__modal-window_form_input" name="phone"  placeholder="Телефон" required>
+
+                                <button type="submit" class="header__modal-window_form-btn btn" data-submit>
+                                    Заказать звонок
+                                </button>
+                            </form>
+                        </div>
+                        <div class="header__modal-window-set" id="header__modal-window-set">
+                            <h4 class="header__modal-window-set_title">
+                                Отлично! Мы скоро вам перезвоним.
+                            </h4>
+                            <button type="reset" class="header__modal-window-set_btn close">
+                                Закрыть
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                </div>
+                <div class="header__offer-flex-wrap">
+                    <div class="header__offer_wrapper">
+                        <div class="header__offer">
+                            <!-- <div class="header__offer_slider">
+                                <h1 class="header__offer_title">
+                                    Что-то новенькое. Мы заждались тебя.
+                                </h1>
+                                <p class="header__offer_text">
+                                    Надоело искать себя в сером городе? Настало время новых идей, свежих красок и вдохновения с Womazing!
+                                </p>
+                            </div> -->
+    
+                            <div class="header__offer_slider active">
+                                <h1 class="header__offer_title">
+                                    Новые поступления в этом сезоне
+                                </h1>
+                                <p class="header__offer_text">
+                                    Утонченные сочетания и бархатные оттенки - вот то, что вы искали в этом сезоне. Время исследовать.
+                                </p>
+                            </div>
+    
+                            <!-- <div class="header__offer_slider">
+                                <h1 class="header__offer_title">
+                                    Включай новый сезон с Womazing
+                                </h1>
+                                <p class="header__offer_text">
+                                    Мы обновили ассортимент - легендарные коллекции и новинки от отечественных дизайнеров
+                                </p>
+                            </div> -->
+                            <div class="header__offer_btn">
+                                <a href="#" class="header__offer_btn-arrow">
+                                    <img src="./img/arrow-header.svg" alt="" class="header__offer_btn-arrow-icon">
+                                </a>
+                                <a href="./shop.html" class="header__offer_btn-link btn">
+                                    Открыть магазин
+                                </a>
+                            </div>
+                        </div>
+                        <div class="scrollbars">
+                            <span class="scrollbar"></span>
+                            <span class="scrollbar active"></span>
+                            <span class="scrollbar"></span>
+                        </div>
+                    </div>
+                    <div class="header__offer-img_wrapper">
+                        <img src="./img/woman-coat-header.png" alt="" class="header__offer-img-home">
+                        <img src="./img/woman-header-two.png" alt="" class="header__offer-img-two">
+                        <img src="./img/woman-header-three.png" alt="" class="header__offer-img-three">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script src="./js/jquery-3.6.4.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/modal-script.js"></script>
+</body>
+</html>
