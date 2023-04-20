@@ -12,9 +12,41 @@ $('.header__overlay-modal').on('click', function() {
     $('.header__modal-window_wrapper').fadeOut();
 });
 
+$('#btnCloseModal').on('click', function() {
+    $('.header__modal-window_wrapper').fadeOut();
+});
+
+$('#btnCloseModalSet').on('click', function() {
+    $('.header__modal-window_wrapper').fadeOut();
+});
+
 $('.header__modal-window_wrapper').children().on('click', function(e) {
     e.stopPropagation();
 });
+
+
+//На JS
+
+// const btnOpenModal = document.getElementById('btnOpenModal');
+// const modalWindow = document.getElementById('modalWindow');
+// const modalWindowSet = document.getElementById('modalWindowSet');
+// const btnFormRequestCall = document.getElementById('btnFormRequestCall');
+// const overlayModal = document.getElementById('header__overlay-modal');
+// const btnCloseModal = document.getElementById('btnCloseModal');
+// const btnCloseModalSet = document.getElementById('btnCloseModalSet');
+
+// btnOpenModal.addEventListener('click', () => {
+//     modalWindow.classList.add('active')
+// })
+
+// function closeModal() {
+//     modalWindow.classList.remove('active');
+// }
+
+// overlayModal.addEventListener('click', closeModal);
+// btnCloseModal.addEventListener('click', closeModal);
+// btnCloseModalSet.addEventListener('click', closeModal);
+
 
 // Validate
 
@@ -24,35 +56,38 @@ $.validator.addMethod("regex", function(value, element, regexp) {
 },"Please check your input.");
 
 
-// Отправка форм
+//Валидация и отправка формы
 
-$(document).ready(function () {
-    $('[data-submit]').on('click', function (e) {
+$(document).ready(function() {
+    $('[data-submit]').on('click', function(e) {
         e.preventDefault();
         $(this).parent('form').submit();
     })
-    $.validator.addMethod("regex", function(value, element, regexp) {
-        var regExsp = new RegExp(regexp);
-        return this.optional(element) || regExsp.test(value);
-    },"Please check your input.");
+    $.validator.addMethod(
+        "regex",
+        function(value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },
+        "Please check your input."
+    );
 
-
-    // Функция валидации
+// Функция валидации и вывода сообщений
 
     function valEl(el) {
         el.validate({
-                rules: {
-                    phone: {
-                        required: true,
-                        regex: '^([\+]+)*[0-9\x20\x28\x29\-]{5,20}$'
-                    },
-                    name: {
-                        required: true,
-                        regex : "[А-Яа-я]{1,32}"
-                    },
-                    email: {
-                        required: true,
-                        email: true
+            rules: {
+                name: {
+                    required: true,
+                    regex : "[А-Яа-яA-Za-z]{1,32}"
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    regex: '^([\+]+)*[0-9\x20\x28\x29\-]{5,20}$'
                 }
             },
             messages: {
@@ -70,45 +105,57 @@ $(document).ready(function () {
             },
             //Начинаем проверку id форм
             submitHandler: function (form) {
-                $('#preloader-active').fadeIn();
+                $('.header__modal-window-set').fadeIn();
                 var $form = $(form);
                 var $formId = $(form).attr('id');
                 switch ($formId) {
-                    case'header__modal-window_form':
-                    $.ajax({
-                        type: 'POST',
-                        url: $form.attr('action'),
-                        data: $form.serialize() 
-                    })
-                    .always(function () {
-                        console.log('Always')
-                        setTimeout(function(){
-                            $form.trigger('reset');
-                            $('#preloader-active').fadeIn();
-                        }, 1100);
-                        setTimeout(function () {
-                            $('#preloader-active').fadeOut();
-                        }, 1300);
-                    });
-                    break;
-                    case'header__modal-window_form':
-                    $.ajax({
-                        type: 'POST',
-                        url: $form.attr('action'),
-                        data: $form.serialize() 
-                    })
-                    .always(function () {
-                        console.log('Always')
-                        setTimeout(function(){
-                            $form.trigger('reset');
-                            $('#preloader-active').fadeIn();
-                        }, 1100);
-                        setTimeout(function () {
-                            $('#preloader-active').fadeOut();
-                            $('#header__modal-window_wrapper').fadeOut();
-                        }, 1300);
-                    });
-                    break;
+                    case 'header__modal-window_form':
+                        $.ajax({
+                                type: 'POST',
+                                url: $form.attr('action'),
+                                data: $form.serialize()
+                            })
+                            .done(function() {
+                                console.log('Success');
+                            })
+                            .fail(function() {
+                                console.log('Fail');
+                            })
+                            .always(function() {
+                                $('.header__modal-window_form_wrapper').fadeOut();
+                                setTimeout(function() {
+                                    $('#modalWindowSet').fadeIn();
+                                    $form.trigger('reset');
+                                }, 1100);
+                                $('#modalWindowSet').on('click', function(e) {
+                                    $(this).fadeOut();
+                                });
+
+                            });
+                        break;
+                        case 'formSendContacts':
+                            $.ajax({
+                                    type: 'POST',
+                                    url: $form.attr('action'),
+                                    data: $form.serialize()
+                                })
+                                .done(function() {
+                                    console.log('Success');
+                                })
+                                .fail(function() {
+                                    console.log('Fail');
+                                })
+                                .always(function() {
+                                    setTimeout(function() {
+                                        $('#formSendContactsSet').fadeIn();
+                                        $form.trigger('reset');
+                                        $(this).fadeOut();
+                                    }, 1000);
+                                    setTimeout(function() {
+                                        $('#formSendContactsSet').fadeOut();
+                                    }, 3000);
+                                });
+                            break;
                 }
                 return false;
             }
@@ -117,4 +164,7 @@ $(document).ready(function () {
     $('.header__modal-window_form').each(function () {
         valEl($(this));
     });
-});
+    $('.contacts__form-send').each(function () {
+        valEl($(this));
+    });
+}); 

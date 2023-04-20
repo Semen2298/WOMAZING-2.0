@@ -15,9 +15,9 @@
 	<!-- Styling -->
 	<meta name="theme-color" content="#4985FF">
 	<link rel="icon" type="image/png" href="./img/favicon.png">
-    <!-- Bootstrap -->
-    <!-- CSS -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -103,10 +103,10 @@
                     </div>
                     <!-- Modal end -->
                 </div>
-                <div class="headerOneItem">
+                <div class="header__title-link_wrapper">
                     <div class="header__title_wrapper">
                         <h2 class="header__title">
-                            Свитшот Sweet Shot
+                            Магазин
                         </h2>
                     </div>
                     <div class="header__link_wrapper">
@@ -115,12 +115,8 @@
                         </a>
                         <span class="border-hyphen">
                         </span>
-                        <a href="" class="header__link">
-                            Свитшоты
-                        </a>
-                        <span class="border-hyphen"></span>
                         <a href="" class="header__link disabled">
-                            Свитшот Sweet Shot
+                            Магазин
                         </a>
                     </div>
                 </div>
@@ -128,71 +124,38 @@
         </div>
     </header>
 
-    <section class="cardProductItems" id="cardProductItems">
+    <section class="productCard" id="productCard">
         <div class="container">
-            <div class="cardProductItem__flex-wrapper">
-                <div class="cardProductItem__img_wrapper">
-                    <img src="./img/ben-eaton-L_kaTYIuu1o-unsplash 1.png" alt="" class="cardProductItem__img">
-                </div>
-                <div class="cardProductItem-offer_wrapper">
-                    <div class="cardProductItem-offer__card-price_wrapper">
-                        <span class="cardProductItem-offer__card-price">
-                            $311
-                        </span>
-                        <span class="cardProductItem-offer__card-price-discount">
-                            $450
-                        </span>
-                    </div>
-                    <div class="cardProductItem-offer__size-btn_wrapper">
-                        <h4 class="cardProductItem-offer__title">
-                            Выберите размер
-                        </h4>
-                        <div class="cardProductItem-offer__size-btn_wrap" id="cardProductItemSizeBtns">
-                            <button class="cardProductItem-offer__size-btn">
-                                S
-                            </button>
-                            <button class="cardProductItem-offer__size-btn">
-                                M
-                            </button>
-                            <button class="cardProductItem-offer__size-btn">
-                                L
-                            </button>
-                            <button class="cardProductItem-offer__size-btn">
-                                XL
-                            </button>
-                            <button class="cardProductItem-offer__size-btn">
-                                XL
-                            </button>
-                        </div>
-                    </div>
-                    <div class="cardProductItem-offer__size-btn_wrapper">
-                        <h4 class="cardProductItem-offer__title">
-                            Выберите цвет
-                        </h4>
-                        <div class="cardProductItem-offer__size-btn-color_wrap" id="cardProductItemColorBtns">
-                            <button class="cardProductItem-offer__size-btn-color" style="background-color: #927876;">
-                            </button>
-                            <button class="cardProductItem-offer__size-btn-color" style="background-color: #D5D5D5;">
-                            </button>
-                            <button class="cardProductItem-offer__size-btn-color" style="background-color: #FD9696;">
-                            </button>
-                            <button class="cardProductItem-offer__size-btn-color" style="background-color: #FDC796;">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="cardProductItem-offer__quantity_wrapper">
-                        <input type="text" name="number" class="cardProductItem-offer__quantity_input" required value="1">
-                        <button class="cardProductItem-offer__quantity_btn btnBac">
-                            Добавить в корзину
-                        </button>
-                    </div>
-                </div>
+            <div class="productCard__tabs_wrapper" id="productCardTabs">
+                <button class="productCard__tab active" data-productCardBtn="Все">
+                    Все
+                </button>
+                <button class="productCard__tab" data-productCardBtn="Пальто">
+                    Пальто
+                </button>
+                <button class="productCard__tab" data-productCardBtn="Свитшот">
+                    Свитшоты
+                </button>
+                <button class="productCard__tab" data-productCardBtn="Кардиган">
+                    Кардиганы
+                </button>
+                <button class="productCard__tab" data-productCardBtn="Толстовка">
+                    Толстовки
+                </button>
             </div>
-            <div class="cardProductItems__related-products_wrapper">
-                <h3 class="cardProductItems__related-products_title">
-                    Связанные товары
-                </h3>
-                <div class="cardProductItems__related-products_card_wrapper">
+            <div class="productCards__wrapper">
+                <div class="productCard__quantity">
+                    Показано: 
+                    <span class="productCard__quantity-number" data-quantityNumber="">
+                        3
+                    </span>
+                    из 
+                    <span class="productCard__quantity-number" data-quantityNumber="">
+                        12
+                    </span>
+                    товаров
+                </div>
+                <div class="newCollection__carts_wrapper productCards" id="productCards">
                     <a href="" class="newCollection__cart_wrapper productCard__wrapper" data-productCard="Футболка">
                         <div class="newCollection__cart-img_wrap">
                             <img src="./img/T-shirt.jpg" alt="" class="newCollection__cart-img">
@@ -203,6 +166,9 @@
                             Футболка USA
                         </h4>
                         <div class="newCollection__cart-price_wrapper">
+                            <span class="newCollection__cart-price-discount">
+                                $229
+                            </span>
                             <span class="newCollection__cart-price">
                                 $129
                             </span>
@@ -221,6 +187,46 @@
                                 $129
                             </span>
                         </div>
+                    </a>
+                    <a href="" class="newCollection__cart_wrapper productCard__wrapper" data-productCard="Свитшот">
+                        <div class="newCollection__cart-img_wrap">
+                            <img src="./img/sweetShot.jpg" alt="" class="newCollection__cart-img">
+                            <div class="newCollection__cart-img-overlay"></div>
+                        </div>
+                        <h4 class="newCollection__cart_title">
+                            Свитшот Sweet Shot
+                        </h4>
+                        <div class="newCollection__cart-price_wrapper">
+                            <span class="newCollection__cart-price">
+                                $129
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="productCard__quantity">
+                    Показано: 
+                    <span class="productCard__quantity-number" data-quantityNumber="">
+                        3
+                    </span>
+                    из 
+                    <span class="productCard__quantity-number" data-quantityNumber="">
+                        12
+                    </span>
+                    товаров
+                </div>
+                <div class="productCard__tabs-link_wrapper">
+                    <a href="shop.html #productCard" class="productCard__tab-link">
+                        <button class="productCard__tab-link_btn">
+                            1
+                        </button>
+                    </a>
+                    <a href="shopTwo.html #productCard" class="productCard__tab-link disabled">
+                        <button class="productCard__tab-link_btn active">
+                            2
+                        </button>
+                    </a>
+                    <a href="shopTwo.html productCard" class="productCard__tab-link disabled">
+                        <img src="./img/arrow-shop.svg" alt="" class="productCard__tab-link_img">
                     </a>
                 </div>
             </div>
@@ -250,7 +256,7 @@
                     <nav class="header__menu_links_wrap">
                         <ul class="header__menu_list">
                             <li class="header__menu_item">
-                                <a href="./index.html" title="Главная" class="header__menu_link">
+                                <a href="./index.html" title="Главная" class="header__menu_link header__menu_link-w-700">
                                     Главная
                                 </a>
                             </li>
@@ -326,7 +332,7 @@
     <script src="./js/jquery-3.6.4.min.js"></script>
     <script src="./js/jquery.validate.min.js"></script>
     <script src="./js/modal-script.js"></script>
-    <script src="./js/tabsOneItem.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/tabs.js"></script>
 </body>
 </html>

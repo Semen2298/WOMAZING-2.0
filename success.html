@@ -33,22 +33,22 @@
                     <nav class="header__menu_links_wrap">
                         <ul class="header__menu_list">
                             <li class="header__menu_item">
-                                <a href="./index.html" class="header__menu_link">
+                                <a href="./index.html" title="Главная" class="header__menu_link">
                                     Главная
                                 </a>
                             </li>
                             <li class="header__menu_item">
-                                <a href="./shop.html" class="header__menu_link">
+                                <a href="./shop.html" title="Магазин" class="header__menu_link">
                                     Магазин
                                 </a>
                             </li>
                             <li class="header__menu_item">
-                                <a href="./about.html" class="header__menu_link">
+                                <a href="./about.html" title="О бренде" class="header__menu_link">
                                     О бренде
                                 </a>
                             </li>
                             <li class="header__menu_item">
-                                <a href="./contacts.html" class="header__menu_link">
+                                <a href="./contacts.html" title="Контакты" class="header__menu_link">
                                     Контакты
                                 </a>
                             </li>
@@ -56,7 +56,9 @@
                     </nav>
                     <div class="header__menu_contacts-wrap">
                         <div class="header__menu_contact_wrapper">
-                            <img src="./img/tel-icon.svg" alt="tel" class="header__menu_contact_icon-tel">
+                            <button type="button" class="header__menu_contact_btn" id="btnOpenModal">
+                                <div class="header__menu_contact_icon-tel"></div>
+                            </button>
                             <a href="tel:+74958235412" class="header__menu_contact_link">
                                 +7 (495) 823-54-12
                             </a>
@@ -67,9 +69,184 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Modal -->
+                    <div class="header__modal-window_wrapper" id="modalWindow">
+                        <div class="header__overlay-modal" id="header__overlay-modal"></div>
+                        <div class="header__modal-window_form_wrapper">
+                            <button class="header__modal-window_form_btn-close" id="btnCloseModal">
+                                <img src="./img/Close.svg" alt="" class="header__modal-window_form_icon-close">
+                            </button>
+                            <h4 class="header__modal-window_form_title">
+                                Заказать обратный звонок
+                            </h4>
+                            <form action="" class="header__modal-window_form" id="header__modal-window_form">
+                                <input type="text" class="header__modal-window_form_input" name="name"  placeholder="Имя" required>
+
+                                <input type="email" class="header__modal-window_form_input" name="email"  placeholder="E-mail" required>
+
+                                <input type="tel" class="header__modal-window_form_input" name="phone"  placeholder="Телефон" required>
+
+                                <button type="submit" class="header__modal-window_form-btn btnBac" id="btnFormRequestCall"  data-submit="">
+                                    Заказать звонок
+                                </button>
+                            </form>
+                        </div>
+                        <div class="header__modal-window-set" id="modalWindowSet">
+                            <h4 class="header__modal-window-set_title">
+                                Отлично! Мы скоро вам перезвоним.
+                            </h4>
+                            <button type="reset" class="btnTransparent header__modal-window-set-close close" id="btnCloseModalSet">
+                                Закрыть
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Modal end -->
+                </div>
+                <div class="header__title-link_wrapper">
+                    <div class="header__title_wrapper">
+                        <h2 class="header__title">
+                            Заказ получен
+                        </h2>
+                    </div>
+                    <div class="header__link_wrapper">
+                        <a href="./index.html" class="header__link">
+                            Главная
+                        </a>
+                        <span class="border-hyphen">
+                        </span>
+                        <a href="./checkout.html" class="header__link">
+                            Оформление заказа
+                        </a>
+                        <span class="border-hyphen">
+                        </span>
+                        <a href="" class="header__link disabled">
+                            Заказ получен
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+
+    <section class="success" id="success">
+        <div class="container">
+            <div class="success__flex-wrap">
+                <div class="success-wrapper">
+                    <img src="./img/Group.svg" alt="" class="success__img">
+                    <div class="success__wrap-text">
+                        <h3 class="success__title">
+                            Заказ успешно оформлен
+                        </h3>
+                        <p class="success__text">
+                            Мы свяжемся с вами в ближайшее время!
+                        </p>
+                    </div>
+                </div>
+                <a href="./index.html" class="btnBac">Перейти на главную</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-flex__wrapper">
+                <div class="footer__logo_wrapper">
+                    <div class="footer__logo-icon_wrapper">
+                        <img src="./img/logo.svg" alt="" class="footer__logo-icon">
+                    </div>
+                    <div class="footer__logo-offer_wrapper">
+                        <span class="footer__logo_text">
+                            © Все права защищены
+                        </span>
+                        <a href="#" class="footer__logo_link">
+                            Политика конфиденциальности
+                        </a>
+                        <a href="#" class="footer__logo_link">
+                            Публичная оферта
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__menu_wrapper">
+                    <nav class="header__menu_links_wrap">
+                        <ul class="header__menu_list">
+                            <li class="header__menu_item">
+                                <a href="./index.html" title="Главная" class="header__menu_link">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="header__menu_item">
+                                <a href="./shop.html" title="Магазин" class="header__menu_link">
+                                    Магазин
+                                </a>
+                                <div class="footer-menu__link-shop_wrapper">
+                                    <ul class="footer-menu__link-shop_list">
+                                        <li class="footer-menu__link-shop_item">
+                                            <a href="#" class="footer-menu__link-shop_link">
+                                                Пальто
+                                            </a>
+                                        </li>
+                                        <li class="footer-menu__link-shop_item">
+                                            <a href="#" class="footer-menu__link-shop_link">
+                                                Свитшоты
+                                            </a>
+                                        </li>
+                                        <li class="footer-menu__link-shop_item">
+                                            <a href="#" class="footer-menu__link-shop_link">
+                                                Кардиганы
+                                            </a>
+                                        </li>
+                                        <li class="footer-menu__link-shop_item">
+                                            <a href="#" class="footer-menu__link-shop_link">
+                                                Толстовки
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="header__menu_item">
+                                <a href="./about.html" title="О бренде" class="header__menu_link">
+                                    О бренде
+                                </a>
+                            </li>
+                            <li class="header__menu_item">
+                                <a href="./contacts.html" title="Контакты" class="header__menu_link">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__contact_wrapper">
+                    <div class="footer__contacts_wrapper">
+                        <a href="tel:+74958235412" class="footer__contact_tel">
+                            +7 (495) 823-54-12
+                        </a>
+                        <a href="mailto:hello@womazing.com" class="footer__contact_email">
+                            hello@womazing.com
+                        </a>
+                    </div>
+                    <div class="footer__contact-social_wrapper">
+                        <a href="https://www.instagram.com/" class="footer__massange-btn" rel="nofollow noopener noreferrer" target="_blank">
+                            <img src="./img/instagram.svg" alt="" class="footer__contact-social_img">
+                        </a>
+                        <a href="https://www.facebook.com" class="footer__massange-btn" rel="nofollow noopener noreferrer" target="_blank">
+                            <img src="./img/facebook.svg" alt="" class="footer__contact-social_img">
+                        </a>
+                        <a href="https://twitter.com" class="footer__massange-btn" rel="nofollow noopener noreferrer" target="_blank">
+                            <img src="./img/twitter.svg" alt="" class="footer__contact-social_img">
+                        </a>
+                    </div>
+                    <div class="footer__contact_visa_wrapper">
+                        <img src="./img/visa-mastercard.svg" alt="" class="footer__contact_visa">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/jquery-3.6.4.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/modal-script.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
