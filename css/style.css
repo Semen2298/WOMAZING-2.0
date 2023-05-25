@@ -181,7 +181,7 @@ section {
 }
 .header__menu_link:hover {
 	font-weight: 700;
-	color: var(--menu-color);
+	color: var(--menu-color); 
 }
 .header__menu_link::after {
 	display: block;
@@ -402,7 +402,7 @@ section {
 .header__title {
 	font-size: 55px;
 }
-.header__link_wrapper {
+.header__link_list {
 	display: flex;
     gap: 13px;
     align-items: center;
@@ -584,7 +584,7 @@ section {
 	display: flex;
 	justify-content: space-between;
 }
-.footer__logo-icon_wrapper {
+.footer__logo-icon {
 	margin-bottom: 70px;
 }
 .footer__logo-offer_wrapper {
